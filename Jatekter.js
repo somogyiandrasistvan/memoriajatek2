@@ -10,13 +10,12 @@ class Jatekter {
     this.#kartyaMegjelenito(this.#kepekLista);
     let index = 0
     $(window).on("megjelenit", (event) => {
-      this.#kivalasztottKepekLista[index] = event.detail
-        index++
+      this.#kivalasztottKepekLista.push(event.detail)
       console.log(this.#kivalasztottKepekLista);
-      if(index == 2){
-        index = 0;
+      if(this.#kivalasztottKepekLista.length == 2){
         this.#kivalasztottKepekLista = [];
       }
+      //kep eleresi utja: event.detail.getAdat()
     });
   }
 
